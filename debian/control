@@ -1,0 +1,91 @@
+Source: qtstyleplugins-src
+Section: libs
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Modestas Vainius <modax@debian.org>,
+           Sune Vuorela <debian@pusling.com>,
+           Pino Toscano <pino@debian.org>,
+           Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
+           Felix Geyer <fgeyer@debian.org>,
+           Timo Jyrinki <timo@debian.org>,
+           Dmitry Shachnev <mitya57@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               libegl1-mesa-dev,
+               libgtk2.0-dev,
+               libmtdev-dev [linux-any],
+               libx11-dev,
+               qtbase5-private-dev,
+Standards-Version: 4.5.0
+Homepage: https://www.qt.io/
+Vcs-Git: https://salsa.debian.org/qt-kde-team/qt/qtstyleplugins.git
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt/qtstyleplugins
+
+Package: qt5-style-plugins
+Architecture: any
+Multi-Arch: same
+Section: metapackages
+Pre-Depends: ${misc:Pre-Depends}
+Depends: qt5-gtk2-platformtheme (= ${binary:Version}),
+         qt5-style-plugin-cleanlooks (= ${binary:Version}),
+         qt5-style-plugin-motif (= ${binary:Version}),
+         qt5-style-plugin-plastique (= ${binary:Version}),
+         ${misc:Depends}
+Description: Qt 5 extra widget styles
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This is a metapackage which pulls in all available styles and the GTK+ 2
+ platform theme.
+
+Package: qt5-style-plugin-cleanlooks
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Replaces: qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Description: Qt 5 extra widget styles - Cleanlooks
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the Cleanlooks widget style.
+
+Package: qt5-style-plugin-motif
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Replaces: qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Description: Qt 5 extra widget styles - Motif
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the Motif widget style.
+
+Package: qt5-style-plugin-plastique
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Replaces: qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Description: Qt 5 extra widget styles - Plastique
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the Plastique widget style.
+
+Package: qt5-gtk2-platformtheme
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libqt5libqgtk2 (<< 5.7), qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Replaces: libqt5libqgtk2 (<< 5.7), qt5-style-plugins (<< 5.0.0+git23.g335dbec-3~)
+Description: Qt 5 extra widget styles - GTK+ 2 Platform theme
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the GTK+ 2 style and platform theme. Export
+ QT_QPA_PLATFORMTHEME=gtk2 to enable it for all Qt applications.

@@ -1,0 +1,73 @@
+qtstyleplugins-src (5.0.0+git23.g335dbec-4) unstable; urgency=medium
+
+  * Add a patch from openSUSE to fix build against Qt 5.15.
+  * Update to debhelper compat level 13.
+    - Use debhelper-compat virtual package, remove debian/compat.
+    - Drop dh_missing override, --fail-missing is now default behavior.
+    - Use ${DEB_HOST_MULTIARCH} substitution in the install files.
+  * Bump Standards-Version to 4.5.0, no changes needed.
+  * Move qt5-style-plugins to metapackages section and remove
+    ${shlibs:Depends} from it (it does not have any files).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 13 Oct 2020 14:10:23 +0300
+
+qtstyleplugins-src (5.0.0+git23.g335dbec-3) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Remove Fathi Boudra from Uploaders list (closes: #879428).
+  * Update to debhelper compat level 11.
+  * Use dh_auto_configure provided by debhelper (closes: #888044).
+  * Update Vcs fields for migration to salsa.debian.org.
+  * Use https protocol in Format field in debian/copyright.
+  * Update debian/watch to use https and the new domain name.
+  * Remove the broken Blackberry styles.
+  * Use debian/not-installed instead of a custom override target.
+  * Drop unused pkg-kde-tools build-dependency.
+  * Bump Standards-Version to 4.3.0, no changes needed.
+  * Run dh_missing with --fail-missing flag.
+
+  [ Pino Toscano ]
+  * Switch Homepage to https://www.qt.io/.
+
+  [ Simon Quigley ]
+  * Split the styles into separate binary packages.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 15 May 2019 17:13:27 +0300
+
+qtstyleplugins-src (5.0.0+git23.g335dbec-2) unstable; urgency=medium
+
+  * Limit the libmtdev-dev build dependency to Linux architectures, as it is
+    needed only there.
+  * Bump Standards-Version to 4.0.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 25 Jun 2017 19:44:50 +0200
+
+qtstyleplugins-src (5.0.0+git23.g335dbec-1) unstable; urgency=medium
+
+  * New upstream snapshot, compatible with Qt 5.8+.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 17 Jun 2017 21:16:16 +0300
+
+qtstyleplugins-src (5.0.0+git16.g7aa4764-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+    - Includes the GTK+ 2 style, moved from qtbase (closes: #843257).
+    - Drop upstream_Cleanlooks-style-Fix-floating-point-exception.patch.
+  * Build-depend on libegl1-mesa-dev, libgtk2.0-dev, libmtdev-dev and
+    libx11-dev, for the GTK+ 2 style and platformtheme.
+  * Update the package description to mention the GTK+ platform theme.
+  * Break/Replace all versions of libqt5libqgtk2.
+  * Update debian/copyright.
+  * Use HTTPS in Vcs-Git and Vcs-Browser fields.
+  * Bump Standards-Version to 3.9.8, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 11 Dec 2016 20:01:02 +0300
+
+qtstyleplugins-src (5.0.0-1) unstable; urgency=low
+
+  * Initial release.
+  * Backport upstream commit 8ff2ac6035fb1d01f5c0054ba14afb949410e3a7 to fix
+    a floating point exception in Cleanlooks style; patch
+    upstream_Cleanlooks-style-Fix-floating-point-exception.patch.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 29 Dec 2014 15:43:05 +0100
