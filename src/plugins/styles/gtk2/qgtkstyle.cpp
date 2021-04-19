@@ -3374,7 +3374,8 @@ void QGtkStyle::drawControl(ControlElement element,
                 first = last;
                 last = tmp;
             }
-            int topIndent = 3;
+            style = gtk_widget_get_style(gtkNotebook);
+            int topIndent = style->ythickness;
             int bottomIndent = 1;
             int tabOverlap = 1;
             painter->save();
